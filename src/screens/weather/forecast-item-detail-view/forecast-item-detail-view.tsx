@@ -4,10 +4,10 @@ import {styles} from './forecast-item-detail-view.style';
 import {Widget} from '../../../components';
 import {CloudAngledRainIcon} from '@hugeicons/core-free-icons';
 import {HugeiconsIcon} from '@hugeicons/react-native';
-import {transformDailyWeatherWidgetData} from '../../../utills/helper';
+import {transformDailyWeatherWidgetData} from '../../../utils/helper';
 import {Text} from '../../../components';
 import {useAppSelector} from '../../../redux/store';
-import {WidgetDataType} from '../../../utills/constants';
+import {WidgetDataType} from '../../../utils/constants';
 
 export const ForecastItemDetailView = () => {
   const selectedDayData = useAppSelector(state => {

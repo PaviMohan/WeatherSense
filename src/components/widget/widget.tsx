@@ -4,7 +4,7 @@ import {Text} from '../text/text';
 import {styles} from './widget.style';
 import {HugeiconsIcon} from '@hugeicons/react-native';
 import {WidgetProps} from './widget.props';
-import {colors} from '../../utills/constants';
+import {colors} from '../../utils/constants';
 
 export const Widget = ({icon, title, value}: WidgetProps) => {
   return (

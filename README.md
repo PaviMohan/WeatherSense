@@ -1,97 +1,145 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# WeatherSense
 
-# Getting Started
+A beautiful and intuitive React Native weather application that provides detailed 5-day weather forecasts with comprehensive meteorological data.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## 🌟 Features
 
-## Step 1: Start Metro
+- **5-Day Weather Forecast**: Get accurate weather predictions for the next 5 days
+- **Detailed Weather Information**: View temperature, weather conditions, humidity, precipitation, wind speed, pressure, visibility, and UV index
+- **Offline Support**: App works offline with cached data when internet is unavailable
+- **Beautiful UI**: Clean, modern interface with intuitive weather icons
+- **Real-time Data**: Fetches live weather data from Open-Meteo API
+- **Cross-Platform**: Currently supports Android devices (iOS support planned)
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## 📱 Screenshots & Demo
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+### App Demo Video
+
+<video width="320" height="640" controls>
+  <source src="demo/app_demo.mov" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+### Screenshots
+
+| No Network State                   | API Failure                          |
+| ---------------------------------- | ------------------------------------ |
+| ![No Network](demo/no_network.png) | ![API Failure](demo/api_faliure.png) |
+
+_More screenshots coming soon!_
+
+## 🛠️ Tech Stack
+
+- **React Native 0.77.0** - Cross-platform mobile development
+- **TypeScript** - Type-safe JavaScript
+- **Redux & Redux Saga** - State management and side effects
+- **Axios** - HTTP client for API requests
+- **Open-Meteo API** - Free weather data API
+- **HugeIcons** - Beautiful weather icons
+- **React Native NetInfo** - Network connectivity detection
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js >= 18
+- npm
+- React Native development environment
+  - For Android: Android Studio with Android SDK
+  - For iOS: Xcode (macOS only) - _iOS support not yet tested_
+
+### Installation
+
+1. Clone the repository:
 
 ```sh
-# Using npm
+git clone https://github.com/PaviMohan/WeatherSense.git
+cd WeatherSense
+```
+
+2. Install dependencies:
+
+```sh
+npm install
+```
+
+### Running the App
+
+#### Start Metro Bundler
+
+First, start the Metro development server:
+
+```sh
 npm start
-
-# OR using Yarn
-yarn start
 ```
 
-## Step 2: Build and run your app
+#### Android
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
+With Metro running, open a new terminal and run:
 
 ```sh
-# Using npm
 npm run android
-
-# OR using Yarn
-yarn android
 ```
 
-### iOS
+#### iOS
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+_iOS support is planned but not yet tested. The app may work on iOS but has not been verified._
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+## 📁 Project Structure
 
-```sh
-bundle install
+```
+WeatherSense/
+├── android/                 # Android native code
+├── ios/                     # iOS native code
+├── src/
+│   ├── components/          # Reusable UI components
+│   │   ├── error-view/      # Error display component
+│   │   ├── header/          # App header
+│   │   ├── text/            # Custom text component
+│   │   └── widget/          # Weather data widgets
+│   ├── redux/               # State management
+│   │   ├── store.ts         # Redux store configuration
+│   │   └── weather/         # Weather-related state
+│   ├── screens/             # App screens
+│   │   └── weather/         # Weather screen
+│   └── utils/              # Utilities and constants
+│       ├── constants.ts     # App constants and types
+│       └── helper.ts        # Helper functions
+└── package.json             # Dependencies and scripts
 ```
 
-Then, and every time you update your native dependencies, run:
+## 🔧 Available Scripts
 
-```sh
-bundle exec pod install
-```
+- `npm start` - Start Metro bundler
+- `npm run android` - Run on Android device/emulator
+- `npm run ios` - Run on iOS simulator/device _(not yet tested)_
+- `npm test` - Run Jest tests (Yet to start)
+- `npm run lint` - Run ESLint
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+## 🌤️ Weather Data
 
-```sh
-# Using npm
-npm run ios
+The app fetches weather data for Chennai, India (latitude: 13.0414, longitude: 80.1267) from the Open-Meteo API, which provides:
 
-# OR using Yarn
-yarn ios
-```
+- Daily temperature (mean)
+- Weather codes with descriptions and icons
+- Apparent temperature
+- UV index
+- Precipitation probability
+- Relative humidity
+- Surface pressure
+- Wind speed
+- Visibility
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+## 🤝 Contributing
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## Step 3: Modify your app
+## 🙏 Acknowledgments
 
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+- [Open-Meteo](https://open-meteo.com/) for providing free weather API
+- [HugeIcons](https://hugeicons.com/) for beautiful icons
+- React Native community for the amazing framework

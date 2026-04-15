@@ -4,7 +4,7 @@ import {Button, View} from 'react-native';
 import {styles} from './error-view.styles';
 import {HugeiconsIcon} from '@hugeicons/react-native';
 import {Text} from '../text/text';
-import {colors} from '../../utills/constants';
+import {colors} from '../../utils/constants';
 
 export const ErrorView = ({
   message,

@@ -1,4 +1,4 @@
-import {transformWeatherDataType} from '../../utills/constants';
+import {transformWeatherDataType} from '../../utils/constants';
 import {
   GET_WEATHER,
   GET_WEATHER_FAILURE,

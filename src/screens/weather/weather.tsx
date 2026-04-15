@@ -6,7 +6,7 @@ import {ForecastList} from './forecast-list/forecast-list';
 import {getWeather} from '../../redux/weather/weatherActions';
 import {Text} from '../../components';
 import {CloudAngledZapIcon, CloudOffIcon} from '@hugeicons/core-free-icons';
-import {colors} from '../../utills/constants';
+import {colors} from '../../utils/constants';
 import {useNetInfo} from '@react-native-community/netinfo';
 import {useAppDispatch, useAppSelector} from '../../redux/store';
 import {ErrorView} from '../../components';
@@ -14,10 +14,6 @@ import {ErrorView} from '../../components';
 export const Weather = () => {
   const {loading, error, weatherData} = useAppSelector(state => state.weather);
   const {isConnected, type} = useNetInfo();
-
-  console.log('net info on weather screen ', isConnected);
-
-  console.log('err app', error, isConnected);
 
   const dispatch = useAppDispatch();
 
@@ -53,6 +49,16 @@ export const Weather = () => {
     return (
       <ErrorView
         message={error.message}
+        subMessage="Please try again later."
+        icon={CloudAngledZapIcon}
+        onRetry={handleRetry}
+      />
+    );
+  }
+  if (weatherData.length === 0) {
+    return (
+      <ErrorView
+        message={'No Weather Data'}
         subMessage="Please try again later."
         icon={CloudAngledZapIcon}
         onRetry={handleRetry}

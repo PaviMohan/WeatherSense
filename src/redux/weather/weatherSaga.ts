@@ -12,8 +12,8 @@ import {
   GET_WEATHER_SUCCESS,
 } from './weatherActions';
 import axios from 'axios';
-import {getLocalISODate, transformWeatherData} from '../../utills/helper';
-import {DEFAULT_ERROR_MESSAGE, ERROR_TYPES} from '../../utills/constants';
+import {getLocalISODate, transformWeatherData} from '../../utils/helper';
+import {DEFAULT_ERROR_MESSAGE, ERROR_TYPES} from '../../utils/constants';
 
 const getWeatherApi = async () => {
   const endDayCount = 4;
@@ -78,7 +78,6 @@ function* fetchWeather(): Generator<CallEffect | PutEffect, void, any> {
         message: errorMessage,
       },
     });
-    console.error('Error fetching weather data:', error);
   }
 }
 export default function* weatherSaga() {

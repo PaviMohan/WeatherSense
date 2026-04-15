@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import {Header} from './src/components';
 import {Weather} from './src/screens/weather/weather';
-import {colors} from './src/utills/constants';
+import {colors} from './src/utils/constants';
 import {Provider} from 'react-redux';
 import store from './src/redux/store';
 import {useNetInfo} from '@react-native-community/netinfo';

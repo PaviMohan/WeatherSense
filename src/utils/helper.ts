@@ -79,7 +79,6 @@ export const transformWeatherData = (
     }
     return transformedData;
   } catch (error) {
-    console.error('Error transforming weather data', error);
     return [];
   }
 };
