@@ -15,10 +15,9 @@ A beautiful and intuitive React Native weather application that provides detaile
 
 ### App Demo Video
 
-<video width="320" height="640" controls>
-  <source src="demo/app_demo.mov" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+🎥 [Watch Full Demo Video](demo/app_demo.mov)
+
+_Click the link above to view the complete app demonstration_
 
 ### Screenshots
 
