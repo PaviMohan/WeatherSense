@@ -10,8 +10,16 @@
     "test": "jest"
   },
   "dependencies": {
+    "@hugeicons/core-free-icons": "^4.1.1",
+    "@hugeicons/react-native": "^1.0.13",
+    "@react-native-community/netinfo": "^12.0.1",
+    "axios": "^1.15.0",
     "react": "18.3.1",
-    "react-native": "0.77.0"
+    "react-native": "0.77.0",
+    "react-native-svg": "^15.8.0",
+    "react-redux": "^9.2.0",
+    "redux": "^5.0.1",
+    "redux-saga": "^1.4.2"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
